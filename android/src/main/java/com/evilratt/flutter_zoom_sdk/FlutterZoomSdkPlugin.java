@@ -257,6 +257,7 @@ public class FlutterZoomSdkPlugin implements FlutterPlugin, MethodChannel.Method
     JoinMeetingParams params = new JoinMeetingParams();
 
     params.displayName = options.get("userId");
+    params.webinarToken = options.get("webinarToken");
     params.meetingNo = options.get("meetingId");
     params.password = options.get("meetingPassword");
 

@@ -145,6 +145,8 @@ class ZoomMeetingOptions {
   /// Host Password For Start Meeting
   String? displayName;
 
+  String? webinarToken;
+
   /// Display Name
   String? meetingId;
 
@@ -193,6 +195,7 @@ class ZoomMeetingOptions {
     this.userId,
     this.userPassword,
     this.displayName,
+    this.webinarToken,
     this.meetingId,
     this.meetingPassword,
     this.disableDialIn,
