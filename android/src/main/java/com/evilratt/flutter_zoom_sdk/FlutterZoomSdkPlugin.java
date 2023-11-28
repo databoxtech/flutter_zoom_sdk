@@ -30,6 +30,7 @@ import us.zoom.sdk.ZoomSDK;
 import us.zoom.sdk.ZoomSDKAuthenticationListener;
 import us.zoom.sdk.ZoomSDKInitParams;
 import us.zoom.sdk.ZoomSDKInitializeListener;
+import us.zoom.sdk.SDKNotificationServiceError;
 import io.flutter.plugin.common.MethodChannel.Result;
 
 /** FlutterZoomPlugin */
@@ -121,8 +122,9 @@ public class FlutterZoomSdkPlugin implements FlutterPlugin, MethodChannel.Method
     }
 
     ZoomSDKInitParams initParams = new ZoomSDKInitParams();
-    initParams.appKey = options.get("appKey");
-    initParams.appSecret = options.get("appSecret");
+//    initParams.appKey = options.get("appKey");
+//    initParams.appSecret = options.get("appSecret");
+    initParams.jwtToken = options.get("jwtToken");
     initParams.domain = options.get("domain");
     initParams.enableLog = true;
 
@@ -171,6 +173,9 @@ public class FlutterZoomSdkPlugin implements FlutterPlugin, MethodChannel.Method
       @Override
       public void onZoomAuthIdentityExpired() { }
     };
+
+//    zoomSDK.initialize(context, options.get("appKey"), options.get("appSecret"), listener, false);
+
     zoomSDK.initialize(context, listener, initParams);
   }
 
@@ -214,7 +219,12 @@ public class FlutterZoomSdkPlugin implements FlutterPlugin, MethodChannel.Method
       }
 
       @Override
-      public void onNotificationServiceStatus(SDKNotificationServiceStatus sdkNotificationServiceStatus) {
+      public void onNotificationServiceStatus(SDKNotificationServiceStatus p1,SDKNotificationServiceError p2) {
+
+      }
+
+      @Override
+      public void onNotificationServiceStatus(SDKNotificationServiceStatus p1) {
 
       }
     };
@@ -350,6 +360,11 @@ public class FlutterZoomSdkPlugin implements FlutterPlugin, MethodChannel.Method
 
       @Override
       public void onZoomAuthIdentityExpired() {
+
+      }
+
+      @Override
+      public void onNotificationServiceStatus(SDKNotificationServiceStatus p1,SDKNotificationServiceError p2) {
 
       }
 

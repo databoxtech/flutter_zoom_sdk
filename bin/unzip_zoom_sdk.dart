@@ -37,7 +37,7 @@ void main(List<String> args) async {
     location = location.replaceFirst("/bin/unzip_zoom_sdk.dart", "");
   }
 
-  await checkAndDownloadSDK(location);
+  // await checkAndDownloadSDK(location);
 
   print('Complete');
 }
