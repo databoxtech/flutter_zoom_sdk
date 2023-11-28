@@ -20,6 +20,9 @@ class ZoomView extends ZoomPlatform {
     if (options.appSecret != null) {
       optionMap.putIfAbsent("appSecret", () => options.appSecret!);
     }
+    if (options.jwtToken != null) {
+      optionMap.putIfAbsent("jwtToken", () => options.jwtToken!);
+    }
 
     optionMap.putIfAbsent("domain", () => options.domain);
     return await channel
