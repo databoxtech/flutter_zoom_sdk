@@ -11,6 +11,7 @@ import 'package:js/js.dart';
 class InitParams {
   external factory InitParams(
       {leaveUrl,
+      jwtToken,
       showMeetingHeader,
       disableInvite,
       disableCallOut,

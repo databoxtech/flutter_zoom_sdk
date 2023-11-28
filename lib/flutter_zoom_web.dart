@@ -35,6 +35,7 @@ class ZoomViewWeb extends ZoomPlatform {
     ZoomMtg.prepareWebSDK();
     ZoomMtg.init(InitParams(
         leaveUrl: "/index.html",
+        jwtToken: options.jwtToken,
         showMeetingHeader: options.showMeetingHeader,
         disableInvite: options.disableInvite,
         disableCallOut: options.disableCallOut,
